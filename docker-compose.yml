@@ -1,0 +1,38 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - backend_media:/app/media
+    environment:
+      - DEBUG=True
+      - SECRET_KEY=your-secret-key-here
+      - CORS_ALLOWED_ORIGINS=http://localhost:3000
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000/api
+      - WDS_SOCKET_PORT=0
+      - WATCHPACK_POLLING=true
+    depends_on:
+      - backend
+
+  integration_tests:
+    build: ./tests
+    volumes:
+      - ./tests:/app
+      - ./tests/report:/app/report
+    depends_on:
+      - backend
+      - frontend
+
+volumes:
+  backend_media:
