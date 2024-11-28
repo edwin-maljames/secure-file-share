@@ -1,4 +1,4 @@
-# Python
+# Backend (Python)
 __pycache__/
 *.py[cod]
 *$py.class
@@ -20,6 +20,20 @@ wheels/
 .installed.cfg
 *.egg
 MANIFEST
+.coverage
+htmlcov/
+.tox/
+.nox/
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.pytest_cache/
+cover/
+
+# Virtual Environment
 .env
 .venv
 env/
@@ -28,32 +42,7 @@ ENV/
 env.bak/
 venv.bak/
 
-# Node
-node_modules/
-/frontend/build
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# Database
-*.sqlite3
-db.sqlite3
-
-# Media files
-media/
-uploads/
-
+# Frontend (React)
 # dependencies
 frontend/node_modules
 frontend/.pnp
@@ -61,18 +50,70 @@ frontend/.pnp.js
 
 # testing
 frontend/coverage
+frontend/cypress/videos
+frontend/cypress/screenshots
 
 # production
 frontend/build
+frontend/dist
 
-# misc
-frontend/.DS_Store
+# environment files
+frontend/.env
 frontend/.env.local
 frontend/.env.development.local
 frontend/.env.test.local
 frontend/.env.production.local
 
+# logs
 frontend/npm-debug.log*
 frontend/yarn-debug.log*
 frontend/yarn-error.log*
+frontend/debug.log*
 
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+.project
+.classpath
+.settings/
+*.code-workspace
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Database
+*.sqlite3
+db.sqlite3
+*.db
+
+# Media and Upload files
+media/
+uploads/
+static/
+assets/
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Logs
+*.log
+logs/
+log/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
